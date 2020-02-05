@@ -1,7 +1,31 @@
 .navbar_style {
     margin: 0px auto;
     padding: 0px auto;
-    background: aqua;
+    background: lightgrey;
     display: block;
 }
+
+.login_formfield_text{
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0px auto;
+
+}
+
+.login_forgot_password_text{
+    font-size: 10px;
+    font-weight: bold;
+    color: #9a9a9a;
+}
+
+
+
+.tabs_container{
+    border-width: 10px 10px 0px 10px;
+    border-style: solid;    
+    border-color: rgba(184, 178, 172,0.1);
+    border-radius: 20%;
+}
+
+
 

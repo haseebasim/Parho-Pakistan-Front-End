@@ -30,49 +30,49 @@ class Header extends Component {
                                 <Collapse isOpen={this.state.isNavOpen} navbar>
                                     <Nav navbar>
                                         <NavItem>
-                                        <NavLink className="nav-link" to="/home" activeClassName="selected" activeStyle={{ color: "gray" }}>
-                                                Home
+                                        <NavLink className="nav-link" to="/home" activeStyle={{ color: "gray" }}>
+                                                <span className="text-dark">Home</span>
                                         </NavLink>
                                         </NavItem>
                                         <NavItem>
                                         <NavLink className="nav-link" to="/" activeStyle={{ color: "gray" }}>
-                                                About Us
+                                            <span className="text-dark">About Us</span>
+                                        </NavLink>
+                                        </NavItem>
+                                        <NavItem>
+                                        <NavLink className="nav-link" to="" activeStyle={{ color: "gray" }}>
+                                            <span className="text-dark">Problem</span>
                                             </NavLink>
                                         </NavItem>
                                         <NavItem>
                                         <NavLink className="nav-link" to="" activeStyle={{ color: "gray" }}>
-                                                Problem
-                                            </NavLink>
-                                        </NavItem>
-                                        <NavItem>
-                                        <NavLink className="nav-link" to="" activeStyle={{ color: "gray" }}>
-                                                Achievements
+                                            <span className="text-dark">Achievements</span>
                                             </NavLink>
                                         </NavItem>
                                         <NavItem>
                                             <UncontrolledDropdown nav inNavbar>
                                                 <DropdownToggle nav caret className="text-secondary">
-                                                    Get Involved
+                                                <span className="text-dark">Get Involved</span>
                                                 </DropdownToggle>
                                                 <DropdownMenu right> 
                                                     <DropdownItem>
                                                         <NavLink className="nav-link" to ="/login" activeStyle={{color:"gray"}}>
-                                                            Signup
+                                                        <span className="text-dark">Sign Up</span>
                                                         </NavLink>
                                                     </DropdownItem>
                                                     <DropdownItem>
                                                     <NavLink className="nav-link" to="" activeStyle={{ color: "gray" }}>
-                                                            Select a child
+                                                        <span className="text-dark">Select a Child</span>
                                                     </NavLink>
                                                     </DropdownItem>
                                                     <DropdownItem>
                                                     <NavLink className="nav-link" to="" activeStyle={{ color: "gray" }}>
-                                                            Sponsor
+                                                        <span className="text-dark">Sponsor</span>
                                                     </NavLink>
                                                     </DropdownItem>
                                                     <DropdownItem>
                                                     <NavLink className="nav-link" to="" activeStyle={{ color: "gray" }}>
-                                                            Track Progress
+                                                        <span className="text-dark">Track Progress</span>
                                                     </NavLink>
                                                     </DropdownItem>
                                                 </DropdownMenu>
@@ -80,12 +80,12 @@ class Header extends Component {
                                         </NavItem>
                                         <NavItem>
                                         <NavLink className="nav-link" to="/login" activeStyle={{ color: "gray" }}>
-                                                Signin
+                                            <span className="text-dark">Sign In</span>
                                         </NavLink>
                                         </NavItem>
                                         <NavItem>
                                         <NavLink className="nav-link" to="" activeStyle={{ color: "gray" }}>
-                                                Contact Us
+                                            <span className="text-dark">Contact Us</span>
                                         </NavLink>
                                         </NavItem>
                                     </Nav> 
