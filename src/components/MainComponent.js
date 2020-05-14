@@ -1,43 +1,28 @@
-import React, { Component } from 'react';
-import Header from './headerComponent';
-import Login from './LoginComponent';
-import Home from './HomeComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React from 'react'
+import {Switch,Route,Redirect} from 'react-router-dom'
+import NavbarComponent from './NavbarComponent'
+import LoginSignup from './LoginComponent'
+import HomeComponent from './HomeComponent'
+import FooterComponent from './FooterComponent'
+import AboutComponent from './AboutComponent'
+import SponsorComponent from './SponsorComponent'   
+import ChildProfileComponent from './ChildProfileComponent'
 
-class Main extends Component{
-
-    constructor(props){
-        super(props);
-        this.state={
-            fields : {
-
-            }
-        }
-
-    }
-
-onChange = (fields)=>{
-    this.setState({
-        fields
-    });
+function MainComponent() {
+    return (
+        <div>
+            <NavbarComponent/>
+            <Switch>
+                <Route path="/home" component={HomeComponent}/>
+                <Route path="/login" component={LoginSignup}/>
+                <Route path='/about' component={AboutComponent}/>
+                <Route path='/sponsor_child/:id' component={ChildProfileComponent}/>
+                <Route path='/sponsor_child' component={SponsorComponent}/>
+                <Redirect to="/home"/>
+            </Switch>
+            <FooterComponent/>
+        </div>
+    )
 }
 
-    render(){
-        return(
-            <div>
-                <Header/>
-                <Switch>
-                    <Route path="/home" component={Home}/>
-                    <Route path="/login" component={() => <Login onChange= {(fields) => this.onChange(fields)}/>} />  
-                    <Redirect to="/home"/>    
-                </Switch>
-            </div>
-
-        );
-
-
-    }
-}
-
-
-export default Main;
+export default MainComponent

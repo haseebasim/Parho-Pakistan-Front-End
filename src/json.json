@@ -1,0 +1,83 @@
+[
+        {   
+            "id":1,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 2,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 3,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 4,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 5,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 6,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 7,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 8,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 9,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        },
+        {
+            "id": 10,
+            "name": "Maryam",
+            "age": "11",
+            "gender": "female",
+            "city": "Gujrat",
+            "occupation": "Doctor"
+        }
+        
+]

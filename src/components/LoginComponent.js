@@ -1,218 +1,205 @@
 import React, { Component } from 'react';
-import {Row,Col,Nav,NavItem,NavLink, TabContent, TabPane, Label,Input, FormGroup,Form, Button, FormFeedback} from 'reactstrap';
-import classnames from 'classnames';
-import {Link} from 'react-router-dom'
-class Login extends Component{
-    constructor(props){
+import $ from 'jquery'
+class LoginSignup extends Component {
+    constructor(props) {
         super(props);
-        this.state={
-            activeTab: '1',
-            login_username: "",
-            login_password: "",
-            signup_username: "",
-            signup_password: "",
-            touched:{
-                login_username: false,
+        this.state = {
+            login_email: '',
+            login_password: '',
+            signup_username: '',
+            signup_email: '',
+            signup_password: '',
+            signup_confirmpassword: '',
+            touched: {
+                login_email: false,
                 login_password: false,
                 signup_username: false,
-                signup_password: false
+                signup_email: false,
+                signup_password: false,
+                signup_confirmpassword: false,
             }
+
         }
-        
+        this.tab_btn_handler = this.tab_btn_handler.bind(this);
+        this.submitHandler = this.submitHandler.bind(this);
+        console.log(this.state.login_email)
     }
 
-    handleOnChange = e =>
-    {
-        this.setState(
-            {
-                [e.target.name] :e.target.value
+    //to change the tabs between login and signup
+    tab_btn_handler = (e) => {
+        if (e.target.id === 'login_tab_btn') {
+            $('#login_container').addClass('active')
+            $('#signup_container').removeClass('active')
+            // $('#login_container').css('display', 'block').animate({ opacity: 1})
+            // $('#signup_container').css({ 'display': 'none' }).animate({ opacity: 0.5})
+            $('#login_tab_btn').toggleClass('btn_active')
+            $('#signup_tab_btn').toggleClass('btn_active')
+        }
+        else {
+            $('#login_container').removeClass('active')
+            $('#signup_container').addClass('active')
+            //            $('#login_container').css('display', 'none').animate({ opacity: 0.5 })
+            //          $('#signup_container').css('display', 'block').animate({ opacity: 1 })
+
+            $('#signup_tab_btn').toggleClass('btn_active')
+            $('#login_tab_btn').toggleClass('btn_active')
+
+        }
+
+    }
+
+
+    submitHandler = (e) => {
+        if ((this.state.login_email === "haseebzaidi123@gmail.com") && (this.state.login_password === "haseeb123")) {
+            e.preventDefault()
+            console.log('works')
+        }
+    }
+
+
+    inputOnChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    inputOnBlur = (e) => {
+        this.setState({
+            touched: {
+                ...this.state.touched,
+                [e.target.name]: true
             }
-        )
-    }
-
-    onSubmit_login= (e) =>{
-        e.preventDefault();
-        this.props.onChange({
-            login_username:this.state.login_username,
-            login_password:this.state.login_password
-        });
-        this.setState({
-            login_username: "",
-            login_password: "",
         })
     }
 
-    onSubmit_signup = (e) => {
-        e.preventDefault();
-        this.props.onChange({
-            signup_username: this.state.signup_username,
-            signup_password: this.state.signup_password
-        });
-        this.setState({
-            signup_username: "",
-            signup_password: ""
-        })
-    }
-
-
-    validate(login_username,login_password,signup_username,signup_password) {
+    validate(login_email, login_password, signup_username, signup_email, signup_password, signup_confirmpassword) {
 
         const errors = {
-            login_username: "",
+            login_email: "",
             login_password: "",
             signup_username: "",
-            signup_password: ""
+            signup_email: "",
+            signup_password: "",
+            signup_confirmpassword: ""
         };
 
-        if (this.state.touched.login_username && login_username.length < 3)
-            errors.login_username = 'User Name should be >= 3 characters';
-        else if (this.state.touched.login_username && login_username.length > 10)
-            errors.login_username = 'User Name should be <= 10 characters';
+        if (this.state.touched.login_email && !(/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/).test(login_email)) { errors.login_email = 'Please enter a valid email with an @ and a valid domain'; }
+        else { errors.login_email = ''; }
+
 
         if (this.state.touched.signup_username && signup_username.length < 3)
             errors.signup_username = 'User Name should be >= 3 characters';
         else if (this.state.touched.signup_username && signup_username.length > 10)
             errors.signup_username = 'User Name should be <= 10 characters';
+        else if (this.state.touched.signup_username && signup_username.length < 10 && this.state.touched.signup_username && signup_username.length > 3)
+            errors.signup_username = "";
+
+
+        if (this.state.touched.signup_email && !(/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/).test(signup_email))
+            errors.signup_email = 'Please enter a valid email with an @ and a valid domain'
+        else if (this.state.touched.signup_email && (/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/).test(signup_email))
+            errors.signup_email = null;
 
         if (this.state.touched.login_password && login_password.length < 6)
             errors.login_password = 'The password cannot be less than 6 characters';
         else if (this.state.touched.login_password && login_password.length > 20)
             errors.login_password = 'The password cannot be more than 20 characters';
-
+        else if (this.state.touched.login_password && login_password.length < 20 && this.state.touched.login_password && login_password.length > 6)
+            errors.login_password = '';
 
         if (this.state.touched.signup_password && signup_password.length < 6)
             errors.signup_password = 'The password cannot be less than 6 characters';
         else if (this.state.touched.signup_password && signup_password.length > 20)
             errors.signup_password = 'The password cannot be more than 20 characters';
 
+        else if (this.state.touched.signup_password && signup_password.length < 20 && this.state.touched.signup_password && signup_password.length > 6)
+            errors.signup_password = '';
+
+        if (this.state.touched.signup_confirmpassword && signup_confirmpassword !== signup_password)
+            errors.signup_confirmpassword = "the password doesnot match";
+        else if (this.state.touched.signup_confirmpassword && signup_confirmpassword === signup_password)
+            errors.signup_confirmpassword = 'The password matches';
+
         return errors;
     }
 
 
-    handleBlur = (field) => (evt) => {
-        this.setState({
-            touched: { ...this.state.touched, [field]: true },
-        });
-    }
 
 
 
-    toggleTab = (tab) =>{
-        if(this.state.activeTab !== tab){
-            this.setState(
-                {activeTab:tab}
-            );
-        }
-    }
+    render() {
+        const errors = this.validate(this.state.login_email, this.state.login_password, this.state.signup_username, this.state.signup_email, this.state.signup_password, this.state.signup_confirmpassword);
 
-    render(){
-        const errors = this.validate(this.state.login_username,this.state.login_password,this.state.signup_username,this.state.signup_password);
-        return(
-            <div className="container mt-5">
-                <div className="row">
-                    <div className="col-6 offset-3" >
-                        <Nav tabs className="justify-content-center h5 border-bottom-0" >
-                            <NavItem >
-                                <NavLink  className={classnames({active: this.state.activeTab === '1'})} onClick={() => {this.toggleTab('1');}}>
-                                    Login
-                                </NavLink>
-                            </NavItem>
-                            <NavItem >
-                                <NavLink className={classnames({active: this.state.activeTab === '2'})} onClick={() => {this.toggleTab('2');}} >
-                                    Signup
-                                </NavLink>
-                            </NavItem>
-                        </Nav>
-                        <TabContent activeTab={this.state.activeTab} >
-                            <TabPane tabId="1" style={{ border: "1px solid #DEE2E6",borderRadius:"5%" }}>
-                                <Form >
-                                    <Row form className="mt-4 ml-2">
-                                        <Col md={{size:8 ,offset:2}}>
-                                            <FormGroup>
-                                                <Label htmlFor="Username" className="login_formfield_text">
-                                                    USERNAME
-                                                </Label>
-                                                <Input type="text" name="login_username" id="login_username" placeholder="UserName" value={this.state.login_username} onChange={e => this.handleOnChange(e)} valid={errors.login_username === ''} invalid={errors.login_username !== ''} onBlur={this.handleBlur('login_username')}/>
-                                                <FormFeedback>{errors.login_username}</FormFeedback>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                        <Row form className="ml-2">
-                                        <Col md={{ size: 8, offset: 2 }}>
-                                            <FormGroup>
-                                                <Label htmlFor="Password" className="login_formfield_text">
-                                                    PASSWORD
-                                                </Label>
-                                                <Input type="password" name="login_password" id="login_password" placeholder="Password" value={this.state.login_password} onChange={e => this.handleOnChange(e)} valid={errors.login_password === ''} invalid={errors.login_password !== ''} onBlur={this.handleBlur("login_password")}/>
-                                                <FormFeedback>{errors.login_password}</FormFeedback>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                    <Row form className="ml-2">
-                                        <Col md={{ size: 8, offset: 2 }}>
-                                            <FormGroup>
-                                                <Link className="login_forgot_password_text text-secondary"><u>Forgot Password?</u></Link>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                    <Row form className="ml-2">
-                                        <Col md={{ size: 6, offset: 5 }}>
-                                            <FormGroup>
-                                                <Button type="button" onClick={e=>{this.onSubmit_login(e)}} className="btn bg-primary">Submit</Button>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-
-                                </Form>
-                            </TabPane>
-                            <TabPane tabId="2" style={{ border: "1px solid #DEE2E6", borderRadius: "5%" }}>
-                                <Form >
-                                    <Row form className="mt-4 ml-2">
-                                        <Col md={{ size: 8, offset: 2 }}>
-                                            <FormGroup>
-                                                <Label htmlFor="Username" className="login_formfield_text">
-                                                    USERNAME
-                                                </Label>
-                                                <Input type="text" name="signup_username" id="signup_username" placeholder="UserName" value={this.state.signup_username} onChange={e => this.handleOnChange(e)} valid={errors.signup_username === ''} invalid={errors.signup_username !== ''} onBlur={this.handleBlur("signup_username")}/>
-                                                <FormFeedback>{errors.signup_username}</FormFeedback>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                    <Row form className="ml-2">
-                                        <Col md={{ size: 8, offset: 2 }}>
-                                            <FormGroup>
-                                                <Label htmlFor="Password" className="login_formfield_text">
-                                                    PASSWORD
-                                                </Label>
-                                                <Input type="password" name="signup_password" id="signup_password" placeholder="Password" value={this.state.signup_password} onChange={e => this.handleOnChange(e)} valid={errors.signup_password === ''} invalid={errors.signup_password !== ''} onBlur={this.handleBlur("signup_password")} />
-                                                <FormFeedback>{errors.signup_password}</FormFeedback>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                    <Row form className="ml-2">
-                                        <Col md={{ size: 8, offset: 2 }}>
-                                            <FormGroup>
-                                                <Link className="login_forgot_password_text text-secondary"><u>Forgot Password?</u></Link>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                    <Row form className="ml-2">
-                                        <Col md={{ size: 6, offset: 5 }}>
-                                            <FormGroup>
-                                                <Button type="button" onClick={e => this.onSubmit_signup(e)} className="rounded bg-primary">Submit</Button>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-
-                                </Form>
-                            </TabPane>
-                        </TabContent>
+        return (
+            <div className='login_signup_component'>
+                <div id="ls_container">
+                    <div id="ls_content_container">
+                        <div id="tab_btn_container">
+                            <input type="button" id="login_tab_btn" value="Login" className="btn_active" onClick={this.tab_btn_handler} />
+                            <input type="button" id="signup_tab_btn" value="Signup" onClick={this.tab_btn_handler} />
+                        </div>
+                        <div id="login_container" className='active'>
+                            <form>
+                                <div>
+                                    <label htmlFor="email" className="ls_label">Email</label>
+                                    <div>
+                                        <input type="email" id="login_email" name="login_email" className="ls_input_fields" placeholder="Email" value={this.state.login_email} onChange={(e) => this.inputOnChange(e)} onBlur={e => this.inputOnBlur(e)} />
+                                        <p className="form_feedback">{errors.login_email}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label htmlFor="password" className="ls_label">Password</label>
+                                    <div>
+                                        <input type="password" id="login_password" name="login_password" className="ls_input_fields" placeholder="Password" value={this.state.login_password} onChange={(e) => this.inputOnChange(e)} onBlur={e => this.inputOnBlur(e)} />
+                                        <p className="form_feedback">{errors.login_password}</p>
+                                    </div>
+                                </div>
+                                <div className="submit_btn_container">
+                                    <button type="submit" onClick={this.submitHandler} className="submit_btn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="signup_container">
+                            <form >
+                                <div>
+                                    <label htmlFor="username" className="ls_label">Username</label>
+                                    <div>
+                                        <input type="text" id="signup_username" name="signup_username" className="ls_input_fields" placeholder="username" value={this.state.signup_username} onChange={(e) => this.inputOnChange(e)} onBlur={e => this.inputOnBlur(e)} />
+                                        <p className="form_feedback">{errors.signup_username}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label htmlFor="email" className="ls_label">Email</label>
+                                    <div>
+                                        <input type="email" id="signup_email" name="signup_email" className="ls_input_fields" placeholder="email" value={this.state.signup_email} onChange={(e) => this.inputOnChange(e)} onBlur={e => this.inputOnBlur(e)} />
+                                        <p className="form_feedback">{errors.signup_email}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label htmlFor="password" className="ls_label">Password</label>
+                                    <div>
+                                        <input type="password" id="signup_password" name="signup_password" className="ls_input_fields" placeholder="password" value={this.state.signup_password} onChange={(e) => this.inputOnChange(e)} onBlur={e => this.inputOnBlur(e)} />
+                                        <p className="form_feedback">{errors.signup_password}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label htmlFor="confirm_password" className="ls_label">Confirm Password</label>
+                                    <div>
+                                        <input type="password" id="signup_confirmpassword" name="signup_confirmpassword" className="ls_input_fields" placeholder="Confirm Password" value={this.state.signup_confirmpassword} onChange={(e) => this.inputOnChange(e)} onBlur={e => this.inputOnBlur(e)} />
+                                        <p className="form_feedback">{errors.signup_confirmpassword}</p>
+                                    </div>
+                                </div>
+                                <div className="submit_btn_container">
+                                    <button type="submit" className="submit_btn">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default Login;
+export default LoginSignup;
 
