@@ -27,10 +27,10 @@ function FooterComponent() {
             <div className='social_links_sec'>
                 <h3>Follow us</h3>
                 <div>
-                    <a href='/' className='social_link'><img src={Youtube} alt='Youtube'/></a>
-                    <a href='/' className='social_link'><img src={Facebook} alt='Facebook' /></a>
-                    <a href='/' className='social_link'><img src={Twitter} alt='Twitter' /></a>
-                    <a href='/' className='social_link'><img src={Instagram} alt='Instagram' /></a>
+                    <a href='?' className='social_link'><img src={Youtube} alt='Youtube'/></a>
+                    <a href='?' className='social_link'><img src={Facebook} alt='Facebook' /></a>
+                    <a href='?' className='social_link'><img src={Twitter} alt='Twitter' /></a>
+                    <a href='?' className='social_link'><img src={Instagram} alt='Instagram' /></a>
                 </div>
             </div>
         </footer>
