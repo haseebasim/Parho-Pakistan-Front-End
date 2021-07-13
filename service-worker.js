@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Parho-Pakistan-Front-End/precache-manifest.a539d9d0dde0e9fab23208aaf840a5c2.js"
+  "/Parho-Pakistan-Front-End/precache-manifest.66731c798a6e6488b5e469465a3de5b3.js"
 );
 
 self.addEventListener('message', (event) => {
