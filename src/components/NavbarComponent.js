@@ -42,9 +42,9 @@ function NavbarComponent() {
             </Link>
           </div>
           <div className="nav_item">
-            <a className="nav_link" href="/sponsor_child">
+            <Link className="nav_link" to="/sponsor_child">
               Sponsor A Child
-            </a>
+            </Link>
           </div>
           <div className="nav_item">
             <Link className="nav_link" to="/login">
