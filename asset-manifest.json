@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Parho-Pakistan-Front-End/static/css/main.963a45c6.chunk.css",
-    "main.js": "/Parho-Pakistan-Front-End/static/js/main.1092d75e.chunk.js",
-    "main.js.map": "/Parho-Pakistan-Front-End/static/js/main.1092d75e.chunk.js.map",
+    "main.js": "/Parho-Pakistan-Front-End/static/js/main.fa9d3751.chunk.js",
+    "main.js.map": "/Parho-Pakistan-Front-End/static/js/main.fa9d3751.chunk.js.map",
     "runtime-main.js": "/Parho-Pakistan-Front-End/static/js/runtime-main.b34fc9f9.js",
     "runtime-main.js.map": "/Parho-Pakistan-Front-End/static/js/runtime-main.b34fc9f9.js.map",
     "static/js/2.8497ad11.chunk.js": "/Parho-Pakistan-Front-End/static/js/2.8497ad11.chunk.js",
     "static/js/2.8497ad11.chunk.js.map": "/Parho-Pakistan-Front-End/static/js/2.8497ad11.chunk.js.map",
     "index.html": "/Parho-Pakistan-Front-End/index.html",
-    "precache-manifest.c37eb01beeac97c3606f1520b3414417.js": "/Parho-Pakistan-Front-End/precache-manifest.c37eb01beeac97c3606f1520b3414417.js",
+    "precache-manifest.a539d9d0dde0e9fab23208aaf840a5c2.js": "/Parho-Pakistan-Front-End/precache-manifest.a539d9d0dde0e9fab23208aaf840a5c2.js",
     "service-worker.js": "/Parho-Pakistan-Front-End/service-worker.js",
     "static/css/main.963a45c6.chunk.css.map": "/Parho-Pakistan-Front-End/static/css/main.963a45c6.chunk.css.map",
     "static/js/2.8497ad11.chunk.js.LICENSE": "/Parho-Pakistan-Front-End/static/js/2.8497ad11.chunk.js.LICENSE",
@@ -27,6 +27,6 @@
     "static/js/runtime-main.b34fc9f9.js",
     "static/js/2.8497ad11.chunk.js",
     "static/css/main.963a45c6.chunk.css",
-    "static/js/main.1092d75e.chunk.js"
+    "static/js/main.fa9d3751.chunk.js"
   ]
 }

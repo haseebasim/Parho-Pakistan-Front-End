@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "154379c089c6ab072c8aa171fe1ac43a",
+    "revision": "6d2a7bec87815d8f576d4feaf7d20e54",
     "url": "/Parho-Pakistan-Front-End/index.html"
   },
   {
-    "revision": "995ee9ef4cf3612eea20",
+    "revision": "1f17d60fd2125b78751c",
     "url": "/Parho-Pakistan-Front-End/static/css/main.963a45c6.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Parho-Pakistan-Front-End/static/js/2.8497ad11.chunk.js.LICENSE"
   },
   {
-    "revision": "995ee9ef4cf3612eea20",
-    "url": "/Parho-Pakistan-Front-End/static/js/main.1092d75e.chunk.js"
+    "revision": "1f17d60fd2125b78751c",
+    "url": "/Parho-Pakistan-Front-End/static/js/main.fa9d3751.chunk.js"
   },
   {
     "revision": "5fdb6b77bf2ecf6fa299",
