@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/Parho-Pakistan-Front-End/static/css/main.963a45c6.chunk.css",
+    "main.js": "/Parho-Pakistan-Front-End/static/js/main.1092d75e.chunk.js",
+    "main.js.map": "/Parho-Pakistan-Front-End/static/js/main.1092d75e.chunk.js.map",
+    "runtime-main.js": "/Parho-Pakistan-Front-End/static/js/runtime-main.b34fc9f9.js",
+    "runtime-main.js.map": "/Parho-Pakistan-Front-End/static/js/runtime-main.b34fc9f9.js.map",
+    "static/js/2.8497ad11.chunk.js": "/Parho-Pakistan-Front-End/static/js/2.8497ad11.chunk.js",
+    "static/js/2.8497ad11.chunk.js.map": "/Parho-Pakistan-Front-End/static/js/2.8497ad11.chunk.js.map",
+    "index.html": "/Parho-Pakistan-Front-End/index.html",
+    "precache-manifest.c37eb01beeac97c3606f1520b3414417.js": "/Parho-Pakistan-Front-End/precache-manifest.c37eb01beeac97c3606f1520b3414417.js",
+    "service-worker.js": "/Parho-Pakistan-Front-End/service-worker.js",
+    "static/css/main.963a45c6.chunk.css.map": "/Parho-Pakistan-Front-End/static/css/main.963a45c6.chunk.css.map",
+    "static/js/2.8497ad11.chunk.js.LICENSE": "/Parho-Pakistan-Front-End/static/js/2.8497ad11.chunk.js.LICENSE",
+    "static/media/HEC.png": "/Parho-Pakistan-Front-End/static/media/HEC.8b731dee.png",
+    "static/media/aboutcontentimg.png": "/Parho-Pakistan-Front-End/static/media/aboutcontentimg.3bda8bcd.png",
+    "static/media/App.css": "/Parho-Pakistan-Front-End/static/media/yannis-h-uaPaEM7MiQQ-unsplash.e67ff2be.png",
+    "static/media/charitylife.png": "/Parho-Pakistan-Front-End/static/media/charitylife.71fdfc6e.png",
+    "static/media/nationalfood.png": "/Parho-Pakistan-Front-End/static/media/nationalfood.a7c5cad9.png",
+    "static/media/redbull.png": "/Parho-Pakistan-Front-End/static/media/redbull.740e35be.png",
+    "static/media/sadboy.png": "/Parho-Pakistan-Front-End/static/media/sadboy.1b18e8b2.png",
+    "static/media/sponsorcardimg.png": "/Parho-Pakistan-Front-End/static/media/sponsorcardimg.baed3f99.png",
+    "static/media/students.png": "/Parho-Pakistan-Front-End/static/media/students.eef2863e.png",
+    "static/media/successstory.png": "/Parho-Pakistan-Front-End/static/media/successstory.709e5b04.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b34fc9f9.js",
+    "static/js/2.8497ad11.chunk.js",
+    "static/css/main.963a45c6.chunk.css",
+    "static/js/main.1092d75e.chunk.js"
+  ]
+}
